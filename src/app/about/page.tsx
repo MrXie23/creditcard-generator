@@ -19,8 +19,8 @@ export default function About() {
             payment systems and applications.
           </p>
           <p className="text-gray-800 mb-4">
-            When developing or testing applications that handle credit card payments, it's often necessary to use 
-            credit card numbers that pass validation checks but don't represent actual financial accounts. This tool 
+            When developing or testing applications that handle credit card payments, it&apos;s often necessary to use 
+            credit card numbers that pass validation checks but don&apos;t represent actual financial accounts. This tool 
             fulfills that need by creating random but structurally valid credit card numbers.
           </p>
         </div>
