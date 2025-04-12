@@ -12,7 +12,7 @@ A Next.js web application for generating test credit card numbers for developmen
 
 ## Demo
 
-The application can be accessed at [your-demo-url-here](https://www.creditscardgenerator.com/).
+The application can be accessed at [Credit card Generator](https://www.creditscardgenerator.com/).
 
 ## Technology Stack
 
