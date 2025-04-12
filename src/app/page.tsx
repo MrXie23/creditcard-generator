@@ -1,103 +1,88 @@
-import Image from "next/image";
+import { Metadata } from 'next';
+import CreditCardGenerator from './components/CreditCardGenerator';
+
+export const metadata: Metadata = {
+  title: 'Credit Card Generator - Generate Test Credit Card Numbers',
+  description: 'Free tool to generate valid test credit card numbers for development, testing and educational purposes.',
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="container mx-auto px-4">
+      {/* Hero section */}
+      <section className="py-10 mb-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Credit Card Number Generator
+          </h1>
+          <p className="text-xl text-gray-800 mb-6">
+            Generate valid test credit card numbers for development and testing
+          </p>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 text-left">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-yellow-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <p className="text-sm text-yellow-800">
+                  <strong>Important:</strong> All generated credit card numbers are for testing purposes only.
+                  They pass standard validation checks but cannot be used for actual transactions.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      
+      {/* Credit Card Generator Component */}
+      <section className="mb-12">
+        <CreditCardGenerator />
+      </section>
+      
+      {/* About and Information Section */}
+      <section className="max-w-4xl mx-auto py-8 mb-12">
+        <div className="bg-white rounded-lg shadow-md p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">About This Tool</h2>
+          <div className="prose prose-blue max-w-none">
+            <p className="text-gray-800">
+              This credit card generator creates valid test credit card numbers that can be used for testing payment systems,
+              e-commerce websites, or any application that requires credit card validation.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Features:</h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-800">
+              <li>Generate valid credit card numbers for all major card providers</li>
+              <li>Select specific card types (Visa, Mastercard, American Express, etc.)</li>
+              <li>Choose the desired length of the card number</li>
+              <li>Export in various formats (JSON, XML, CSV)</li>
+              <li>All generated numbers pass the Luhn check algorithm</li>
+            </ul>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">How it Works:</h3>
+            <p className="text-gray-800">
+              The generator creates random credit card numbers that follow the format rules for each card type.
+              Each number starts with the correct prefix for the selected card type (e.g., Visa cards start with a 4),
+              contains the correct number of digits, and includes a valid check digit calculated using the Luhn algorithm.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Disclaimer:</h3>
+            <p className="text-gray-800">
+              This tool is provided for testing and educational purposes only. The credit card numbers generated:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-800">
+              <li>Are not connected to any real accounts</li>
+              <li>Do not have any associated funds</li>
+              <li>Cannot be used for actual financial transactions</li>
+              <li>Should not be used for any fraudulent or illegal activities</li>
+            </ul>
+            <p className="mt-4 text-gray-800">
+              Use of the generated card numbers for any purpose other than legitimate testing or development is strictly prohibited.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
